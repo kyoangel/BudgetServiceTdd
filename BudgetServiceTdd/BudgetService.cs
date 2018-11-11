@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BudgetServiceTdd
@@ -14,17 +15,8 @@ namespace BudgetServiceTdd
 
 		public double TotalAmount(DateTime start, DateTime end)
 		{
-			var budgets = _budgetRepository.GetAll();
-			if (budgets.Any())
-			{
-				if (budgets[0].FirstDay() > start)
-				{
-					return 0;
-				}
-				return end.Subtract(start).Days + 1;
-			}
-
-			return 0;
+			var period = new Period(start, end);
+			return _budgetRepository.GetAll().Sum(x => x.DailyAmount() * period.OverlappingDays(x.CreatePeriod()));
 		}
 	}
 }
