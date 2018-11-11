@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BudgetServiceTdd
 {
-    public class Class1
+    public class BudgetService
     {
+	    public BudgetService()
+	    {
+		    
+	    }
     }
 }
