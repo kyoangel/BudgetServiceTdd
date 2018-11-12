@@ -1,7 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace BudgetServiceTdd.Tests
 {
@@ -11,8 +8,7 @@ namespace BudgetServiceTdd.Tests
 		[TestMethod]
 		public void MyTestMethod()
 		{
-
+			Assert.Fail("no implement");
 		}
 	}
-
 }
